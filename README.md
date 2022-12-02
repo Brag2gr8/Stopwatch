@@ -1,4 +1,4 @@
-# cd9ekwH8
+# STOPWATCH
 
 Quick start:
 
