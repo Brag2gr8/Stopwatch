@@ -2,7 +2,6 @@
 let [seconds,minutes,hours] = [0,0,0];
 let timerRef = document.querySelector('.timerDisplay');
 let int = null;
-let bit = null;
 
 const hourEl = document.querySelector(".hours");
 const minuteEl = document.querySelector(".minutes");
@@ -17,22 +16,11 @@ document.getElementById("start").addEventListener("click", () => {
         clearInterval(int);
     };
     int = setInterval(displayTimer,1000);
-    
-    bit = setInterval(toggleBorder,2000);
 });
-
-function toggleBorder() {
-    if(borderEl.style.borderColor = "greenyellow"){
-        borderEl.style.borderColor = "white"
-    }
-    setTimeout(() => {if (borderEl.style.borderColor = "white") {
-        borderEl.style.borderColor = "greenyellow"
-    }}, 1000)
     
 }
 
 document.getElementById('pause').addEventListener('click', () => {
-    clearInterval(bit);
     if (secondEl.innerHTML > 0) {
         clearInterval(int);
         setTimeout(() => borderEl.style.borderColor = "orange", 500)
@@ -48,7 +36,6 @@ document.getElementById("stop").addEventListener("click", () => {
         hourEl.textContent = '00';
         minuteEl.textContent = '00';
         secondEl.textContent = '00';
-        clearInterval(bit);
         setTimeout(() => borderEl.style.borderColor = "red", 500);
     } else { alert("NO ACTIVE TIME")}
 })
